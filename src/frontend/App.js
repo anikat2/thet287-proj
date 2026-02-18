@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Paint from "./frontend/Paint";
-import Lobby from "./frontend/Lobby";
+import Paint from "./Paint";
+import Lobby from "./Lobby";
 
 function App() {
     const [session, setSession] = useState(null); // { code, playerId }
