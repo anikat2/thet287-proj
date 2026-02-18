@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Paint from "./frontend/Paint";
+import Lobby from "./frontend/Lobby";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [session, setSession] = useState(null); // { code, playerId }
+
+    const handleJoin = (code, playerId) => {
+        setSession({ code, playerId });
+    };
+
+    return (
+        <div>
+            {session
+                ? <Paint code={session.code} playerId={session.playerId} />
+                : <Lobby onJoin={handleJoin} />
+            }
+        </div>
+    );
 }
 
 export default App;
