@@ -1,0 +1,18 @@
+[build-system]
+requires = ["uv_build>=0.10.0,<0.11.0"]
+build-backend = "uv_build"
+
+[project]
+name = "thet287-proj"
+version = "0.1.0"
+description = "FastAPI backend for THET287"
+requires-python = ">=3.9"
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "secrets",
+    "asyncio",
+    "httpx",
+    "pydantic"
+]
